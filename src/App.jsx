@@ -1,10 +1,15 @@
 import "./App.css";
 import Todo from "./components/Todo";
+import TodoTitle from "./components/TodoTitle";
 
 function App() {
   return (
     <>
-      <h1>My Todos</h1>
+      <TodoTitle />
+      <Todo />
+      <Todo />
+      <Todo />
+      <Todo />
       <Todo />
     </>
   );
