@@ -1,4 +1,4 @@
-function Popup({ title }) {
+const Popup = ({ title, closePopup }) => {
   return (
     <>
       <div className="popup">
@@ -11,16 +11,16 @@ function Popup({ title }) {
             Confirm
           </button>
           <button
-            onClick={() => console.log(`Cancel button clicked`)}
+            onClick={() => closePopup()}
             className="popup__btn popup__btn--cancel"
           >
             Cancel
           </button>
         </div>
       </div>
-      <div className="backdrop"></div>
+      <div className="backdrop" onClick={() => closePopup()}></div>
     </>
   );
-}
+};
 
 export default Popup;
