@@ -2,7 +2,7 @@ import "./App.css";
 import Todo from "./components/Todo.jsx";
 import TodoTitle from "./components/TodoTitle.jsx";
 import Popup from "./components/Popup.jsx";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Counter from "./components/Counter.jsx";
 
 function App() {
@@ -16,6 +16,18 @@ function App() {
   const closePopup = () => {
     setPopupOpen(false);
   };
+
+  useEffect(() => {
+    console.log("ONLY when component mounts");
+  }, []);
+
+  useEffect(() => {
+    console.log(`When component mounts AND ${popupOpen} changes.`);
+  }, [popupOpen]);
+
+  useEffect(() => {
+    console.log("On EVERY render");
+  });
 
   return (
     <>
